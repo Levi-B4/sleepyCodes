@@ -8,8 +8,14 @@ Ranker::Ranker(){}
 
 
 
-bool Ranker::isRankedUp(){
+bool Ranker::isNewRank(){
 	return true;	
 }
 
-void Ranker::Read(){}
+void Ranker::read(){
+
+}
+
+void Ranker::add(int elo){
+
+}

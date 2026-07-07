@@ -6,7 +6,7 @@
 using std::cout, std::endl;
 
 int main(){
-	Ranker r();
+	Ranker r;
 	r.read();
 
 	cout << "how much time are you adding?" << endl;

@@ -5,11 +5,12 @@
 class Ranker{
 	public:
 		Ranker();
-		bool isRankedUp();
+		bool isNewRank();
 		void read();
+		void add(int elo);
 
 	private:
-		bool isRankedUp = false;
+		bool newRank = false;
 		int rankOnLoad = 0;
 		int elo = 5;
 };
