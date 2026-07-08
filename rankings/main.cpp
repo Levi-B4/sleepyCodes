@@ -1,4 +1,5 @@
 #include "ranker.cpp"
+#include "ftxTest.cpp"
 
 
 #include <iostream>
@@ -6,6 +7,7 @@
 using std::cout, std::endl;
 
 int main(){
+	testing();
 	Ranker r;
 	r.read();
 
