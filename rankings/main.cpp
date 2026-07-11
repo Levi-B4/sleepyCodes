@@ -1,5 +1,5 @@
 #include "ranker.cpp"
-#include "ftxTest.cpp"
+#include "appRanker.cpp"
 
 #include <json/json.h>
 
@@ -15,7 +15,7 @@ int main(){
 	std::ifstream config_doc("config_doc.json", std::ifstream::binary);
 	config_doc >> root;
 	
-	testing();
+	AppRanker ar;
 	Ranker r;
 	r.read();
 
