@@ -12,7 +12,6 @@
 #include <ftxui/component/component_options.hpp>
 #include <ftxui/util/ref.hpp>
 
-
 using std::string;
 using namespace ftxui;
 
@@ -20,8 +19,20 @@ AppRanker::AppRanker(){
 	string dataPath;
 	string selectedSkill;
 
-	Component inputDataPath = Input(&dataPath, "Data Path");
-	Component inputSelectedSkill = Input(&selectedSkill, "Selected Skill");
+	InputOption dataPathOption;
+	dataPathOption.multiline = false;
+	Component inputDataPath = Input(&dataPath, "Data Path", dataPathOption);
+	dataPathOption.on_change = [&](){
+		if(isValidDataPath(dataPath)){
+			inputDataPath |= color(Color::Green);
+		} else {
+			inputDataPath |= color(Color::Red);
+		}
+	};
+
+	InputOption selectedSkillOption;
+	selectedSkillOption.multiline = false;
+	Component inputSelectedSkill = Input(&selectedSkill, "Selected Skill", selectedSkillOption);
 
 	auto component = Container::Vertical({
 		inputDataPath,
@@ -43,3 +54,7 @@ AppRanker::AppRanker(){
 	auto screen = App::TerminalOutput();
 	screen.Loop(renderer);
 };
+
+bool AppRanker::isValidDataPath(string path){
+	return true;
+}
