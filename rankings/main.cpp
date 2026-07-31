@@ -5,19 +5,17 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
+using std::string;
 
 
 using std::cout, std::endl;
 
-int main(){
-	Json::Value root;
-	std::ifstream config_doc("config_doc.json", std::ifstream::binary);
-	config_doc >> root;
-	
+int main(int argc , char *argv[]){
 	AppRanker ar;
 	Ranker r;
-	r.read();
+	r.read(string(argv[1]));
 
 	cout << "how much time are you adding?" << endl;
 
@@ -28,6 +26,4 @@ int main(){
 	if(r.isNewRank()){
 		cout << "rankup!!" << endl;
 	}
-
-
 }

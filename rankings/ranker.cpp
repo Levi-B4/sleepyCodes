@@ -1,8 +1,15 @@
 #include "ranker.h"
 
+#include <string>
+#include <fstream>
 
-// ranker, isRankedUp, read
+#include <json/json.h>
 
+
+using std::string;
+using std::ifstream;
+
+using Json::Value;
 
 Ranker::Ranker(){}
 
@@ -12,8 +19,10 @@ bool Ranker::isNewRank(){
 	return true;	
 }
 
-void Ranker::read(){
-
+void Ranker::read(string path){
+	Value root;
+	ifstream dataFile(path, ifstream::binary);
+	dataFile >> root;
 }
 
 void Ranker::add(int elo){

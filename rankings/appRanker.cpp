@@ -46,7 +46,8 @@ AppRanker::AppRanker(){
 				hbox(text("Skill : "), inputSelectedSkill->Render()),
 				separator(),
 				text("Data location: " + dataPath),
-				text("Skill: " + selectedSkill)
+				text("Skill: " + selectedSkill),
+				text("testing")
 			}) |
 			border;
 		});

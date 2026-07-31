@@ -1,12 +1,15 @@
 #ifndef RANKER_H
 #define RANKER_H
 
+#include <string>
+
+using std::string;
 
 class Ranker{
 	public:
 		Ranker();
 		bool isNewRank();
-		void read();
+		void read(string path);
 		void add(int elo);
 
 	private:
